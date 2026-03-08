@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход — Yeticave</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="body">
+
+    <div class="login-page">
+        <h1 class="login-page__title">Войти</h1>
+
+        <img src="smile-boy.jpg" alt="Улыбающийся парень" class="login-page__image">
+
+        <form class="login-form login-page__form" action="/login" method="POST">
+            
+            <div class="login-form__field">
+                <label class="login-form__label" for="email">Электропочта</label>
+                <div class="login-form__input-wrapper">
+                    <input class="login-form__input" type="email" id="email" name="email" required>
+                </div>
+                <span class="login-form__description">Введите электропочту в формате *****@***.**</span>
+            </div>
+
+            <div class="login-form__field">
+                <label class="login-form__label" for="password">Пароль</label>
+                <div class="login-form__input-wrapper">
+                    <input class="login-form__input" type="password" id="password" name="password" required>
+                </div>
+            </div>
+
+            <button class="login-form__button" type="submit">Продолжить</button>
+            
+        </form>
+    </div>
+
+</body>
+</html>
