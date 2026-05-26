@@ -1,0 +1,184 @@
+/* Контейнер страницы создания поста */
+.create-post-container {
+    width: 474px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Golos UI', -apple-system, sans-serif;
+}
+
+/* Серая квадратная заглушка «Добавить фото» (Размер 474х474 из Figma) */
+.create-post__blank {
+    width: 474px;
+    height: 474px;
+    background-color: #F2F3F5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-post__blank-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Черная кнопка добавления */
+.create-post__btn-black {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.create-post__btn-black:hover {
+    background-color: #333333;
+}
+
+/* Окно слайдера (скрыто, пока нет фоток) */
+.create-post__slider {
+    width: 474px;
+    height: 474px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000; /* Черный фон для пропорций */
+}
+
+.create-post__slider-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.create-post__slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    display: block;
+}
+
+/* Стрелочки навигации внутри слайдера */
+.create-post__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.create-post__arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.create-post__arrow--left { left: 16px; }
+.create-post__arrow--right { right: 16px; }
+
+/* Счетчик слайдов (1/3) в верхнем правом углу */
+.create-post__counter {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Синяя кнопка-ссылка «+ Добавить фото» под окном */
+.create-post__action-line {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.create-post__btn-blue {
+    background: none;
+    border: none;
+    color: #0076F2;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+}
+
+.create-post__btn-blue:hover {
+    text-decoration: underline;
+}
+
+/* Поле ввода подписи */
+.create-post__input-wrapper {
+    border-bottom: 1px solid #E4E6EB;
+    padding: 8px 0;
+    margin-bottom: 40px;
+}
+
+.create-post__text-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #1A1A1A;
+    font-family: inherit;
+}
+
+.create-post__text-input::placeholder {
+    color: #808080;
+}
+
+/* Нижняя кнопка «Поделиться» (140х48 из Figma) */
+.create-post__submit-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.create-post__publish-btn {
+    width: 140px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Состояния активности кнопки */
+.create-post__publish-btn:disabled {
+    background-color: #B4B4B4;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+.create-post__publish-btn:not(:disabled) {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+.create-post__publish-btn:not(:disabled):hover {
+    background-color: #333333;
+}

@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: 'Golos Text', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    width: 72px;
+    height: 100vh;
+    border-right: 1px solid rgba(34, 34, 34, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    background: #fff;
+    z-index: 10;
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar__item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.sidebar__item--active {
+    background-color: #f2f3f5;
+}
+
+.sidebar__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.feed {
+    margin-left: 72px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 84px 20px 20px;
+}
+
+.post {
+    width: 500px;
+    margin-bottom: 48px;
+}
+
+.post__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.post__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.post__user-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.post__edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.post__edit-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.post__image-container {
+    position: relative;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.post__image {
+    width: 100%;
+    height: 500px; 
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+.post__image-counter {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(34, 34, 34, 0.6);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+}
+
+.post__footer {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.post__likes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #F2F3F5;
+    padding: 6px 12px;
+    border-radius: 10px;
+}
+
+.post__like-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.post__like-count {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Кнопки переключения слайдера в ленте */
+.post__slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #444444;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.1s;
+    user-select: none;
+}
+
+.post__slider-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.post__slider-btn:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.post__slider-btn--prev { left: 12px; }
+.post__slider-btn--next { right: 12px; }
+
+/* Кнопки переключения слайдера внутри модалки */
+.modal__slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #444444;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2020;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+.modal__slider-btn:hover { background: rgba(255, 255, 255, 0.95); }
+.modal__slider-btn--prev { left: 20px; }
+.modal__slider-btn--next { right: 20px; }
+
+/* === ЧИСТЫЕ ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ ТЕКСТА И КНОПКИ ЕЩЕ === */
+.post__caption-wrapper {
+    margin-top: 10px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Сам текст идет стандартной строкой */
+.post__caption-text {
+    color: #000000;
+    word-break: break-word;
+}
+
+/* Кнопка "ещё" аккуратно встает сразу за текстом без лишних отступов */
+.post__more-btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #8e8e93; /* Светло-серый из макета Figma */
+    font-size: 15px;
+    font-family: 'Golos Text', sans-serif;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 6px;
+    outline: none;
+    font-weight: 400;
+}
+
+.post__more-btn:hover {
+    color: #666666;
+}
+
+/* Блок даты под текстом */
+.post__date {
+    margin-top: 8px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 13px;
+    color: #8e8e93; /* Приятный серый цвет для даты */
+}
+
+#slider-img {
+    width: 100%;        /* Занимает всю ширину контейнера */
+    height: 400px;      /* Или любая фиксированная высота */
+    object-fit: contain; /* ГЛАВНОЕ: сохраняет пропорции, вписывает картинку целиком */
+    background: #f0f0f0;
+}
